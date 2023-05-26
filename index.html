@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Прогресс бар</title>
+</head>
+<body>
+    <div class="progress__main">
+
+
+        <div class="progress__bar">
+            <svg class="progress__bar-svg" viewbox="0 0 200 200">
+                <circle r="80" cx="100" cy="100" fill="none" stroke-width="12" stroke="#ccc" fill="none"/>
+                <circle class="progress__bar-circle" stroke="#1c5dff" stroke-width="12" cx="100" cy="100" r="80" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <div class="progress__control">
+
+            <div class="progress__value">
+                <input min="0" max="100" id="value-input" type="number" class="progress__value-input">
+                <p>Value</p>
+            </div>
+
+
+            <div class="progress__animate">
+                <div class="progress__animate-toggle-switch">
+                    <input type="checkbox" id="animate-toggle">
+                    <label for="animate-toggle" class="progress__animate-toggle-label"></label>
+                </div>
+                <p id="animate" class="red-text">Animate</p>
+            </div>
+
+            <div class="progress__hide">
+                <div class="progress__hide-toggle-switch">
+                    <input type="checkbox" id="hide-toggle">
+                    <label for="hide-toggle" class="progress__hide-toggle-label"></label>
+                </div>
+                <p id="hide" class="red-text">Hide</p>
+            </div>
+            
+        </div>
+
+    </div>
+<script src="script.js"></script>
+</body>
+</html>

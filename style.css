@@ -1,0 +1,145 @@
+
+body, html {
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.progress__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 35rem;
+}
+
+.progress__bar {
+    width: 15rem;
+}
+.rotate {
+    animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress__control {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress__bar-hide {
+    opacity: 0;
+}
+
+.progress__bar-circle {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset .3s;
+}
+
+.progress__animate, .progress__hide, .progress__value {
+    margin: auto 0;
+    display: flex;
+    width: 12.5rem;
+    gap: 1.2rem;
+    flex-direction: row;
+    align-items: center;
+}
+.progress__value-input {
+    margin: auto 0;
+    padding: 5px;
+    width: 2.375rem;
+    height: 1.25rem;
+    border: 1px solid black;
+    border-radius: 34px;
+}
+.progress__value-input[type="number"] {
+    font-size: 1.2rem;
+    font-weight: 500;
+    -moz-appearance: textfield;
+}
+.progress__value-input::-webkit-outer-spin-button,
+.progress__value-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.progress__value-input:active, .progress__value-input:hover, .progress__value-input:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.progress__animate-toggle-switch, .progress__hide-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 3.125rem;
+    height: 2.25rem;
+}
+
+.progress__animate-toggle-switch input, .progress__hide-toggle-switch input  {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.progress__animate-toggle-label, .progress__hide-toggle-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color .2s;
+    border-radius: 34px;
+}
+
+.progress__animate-toggle-label:before, .progress__hide-toggle-label:before {
+    position: absolute;
+    content: "";
+    height: 1.875rem;
+    width: 1.875rem;
+    left: 0.1875rem;
+    bottom: 0.1875rem;
+    background-color: white;
+    transition: transform .2s;
+    border-radius: 50%;
+}
+
+.progress__animate-toggle-switch input:checked + .progress__animate-toggle-label, .progress__hide-toggle-switch input:checked + .progress__hide-toggle-label  {
+    background-color: #1c5dff;
+}
+
+.progress__animate-toggle-switch input:checked + .progress__animate-toggle-label:before, .progress__hide-toggle-switch input:checked + .progress__hide-toggle-label:before {
+    transform: translateX(0.875rem);
+}
+
+.grey-text {
+    color: #838383;
+}
+
+.black-text {
+    color: #000000;
+}
+
+
+@media screen and (max-width: 568px) {
+    .progress__main {
+        flex-direction: column;
+    }
+}
